@@ -69,3 +69,4 @@ end
 #Extra gems
 gem 'pg', '~> 1.5', '>= 1.5.4'
 gem "devise", "~> 4.9"
+gem 'cancancan'
