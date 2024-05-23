@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_21_133351) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_23_103545) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,62 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_133351) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "collections", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "category"
+    t.string "image_url"
+    t.bigint "user_id", null: false
+    t.boolean "custom_string1_state"
+    t.string "custom_string1_name"
+    t.boolean "custom_string2_state"
+    t.string "custom_string2_name"
+    t.boolean "custom_string3_state"
+    t.string "custom_string3_name"
+    t.boolean "custom_int1_state"
+    t.string "custom_int1_name"
+    t.boolean "custom_int2_state"
+    t.string "custom_int2_name"
+    t.boolean "custom_int3_state"
+    t.string "custom_int3_name"
+    t.boolean "custom_txt1_state"
+    t.text "custom_txt1_name"
+    t.boolean "custom_txt2_state"
+    t.text "custom_txt2_name"
+    t.boolean "custom_txt3_state"
+    t.text "custom_txt3_name"
+    t.boolean "custom_date1_state"
+    t.string "custom_date1_name"
+    t.boolean "custom_date2_state"
+    t.string "custom_date2_name"
+    t.boolean "custom_date3_state"
+    t.string "custom_date3_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_collections_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "tags"
+    t.bigint "collection_id", null: false
+    t.string "custom_string1_value"
+    t.string "custom_string2_value"
+    t.string "custom_string3_value"
+    t.integer "custom_int1_value"
+    t.integer "custom_int2_value"
+    t.integer "custom_int3_value"
+    t.text "custom_txt1_value"
+    t.text "custom_txt2_value"
+    t.text "custom_txt3_value"
+    t.date "custom_date1_value"
+    t.date "custom_date2_value"
+    t.date "custom_date3_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["collection_id"], name: "index_items_on_collection_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -42,4 +98,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_21_133351) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "collections", "users"
+  add_foreign_key "items", "collections"
 end

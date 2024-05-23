@@ -1,0 +1,97 @@
+<%= form_with(model: collection) do |form| %>
+  <% if collection.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(collection.errors.count, "error") %> prohibited this collection from being saved:</h2>
+
+      <ul>
+        <% collection.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.select :category, options_from_collection_for_select(@categories, :id, :name) %>
+  </div>
+
+  <div>
+    <%= form.label :image_url, style: "display: block" %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div>
+    <%= form.label :custom_string1_name, style: "display: block" %>
+    <%= form.text_field :custom_string1_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_string2_name, style: "display: block" %>
+    <%= form.text_field :custom_string2_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_string3_name, style: "display: block" %>
+    <%= form.text_field :custom_string3_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_int1_name, style: "display: block" %>
+    <%= form.text_field :custom_int1_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_int2_name, style: "display: block" %>
+    <%= form.text_field :custom_int2_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_int3_name, style: "display: block" %>
+    <%= form.text_field :custom_int3_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_txt1_name, style: "display: block" %>
+    <%= form.text_area :custom_txt1_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_txt2_name, style: "display: block" %>
+    <%= form.text_area :custom_txt2_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_txt3_name, style: "display: block" %>
+    <%= form.text_area :custom_txt3_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_date1_name, style: "display: block" %>
+    <%= form.text_field :custom_date1_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_date2_name, style: "display: block" %>
+    <%= form.text_field :custom_date2_name %>
+  </div>
+
+  <div>
+    <%= form.label :custom_date3_name, style: "display: block" %>
+    <%= form.text_field :custom_date3_name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
