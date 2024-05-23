@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
 
   # GET /collections/:collection_id/items/1
   def show
+    @item
   end
 
   # GET /collections/:collection_id/items/new

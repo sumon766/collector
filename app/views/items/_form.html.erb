@@ -25,7 +25,6 @@
     <%= form.hidden_field :collection_id, value: @collection.id %>
   </div>
 
-  <% # Show custom string fields if their state is true %>
   <% if @collection.custom_string1_state %>
     <div>
       <%= form.label @collection.custom_string1_name, style: "display: block" %>
@@ -47,7 +46,6 @@
     </div>
   <% end %>
 
-  <% # Show custom integer fields if their state is true %>
   <% if @collection.custom_int1_state %>
     <div>
       <%= form.label @collection.custom_int1_name, style: "display: block" %>
@@ -69,7 +67,6 @@
     </div>
   <% end %>
 
-  <% # Show custom text fields if their state is true %>
   <% if @collection.custom_txt1_state %>
     <div>
       <%= form.label @collection.custom_txt1_name, style: "display: block" %>
@@ -91,7 +88,6 @@
     </div>
   <% end %>
 
-  <% # Show custom date fields if their state is true %>
   <% if @collection.custom_date1_state %>
     <div>
       <%= form.label @collection.custom_date1_name, style: "display: block" %>
