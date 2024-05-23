@@ -15,6 +15,7 @@ class CollectionsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
   end
 
   def create

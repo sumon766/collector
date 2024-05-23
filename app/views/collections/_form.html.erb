@@ -13,17 +13,17 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required:true %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, required:true %>
   </div>
 
   <div>
     <%= form.label :category, style: "display: block" %>
-    <%= form.select :category, options_from_collection_for_select(@categories, :id, :name) %>
+    <%= form.select :category, options_from_collection_for_select(@categories, :id, :name, @collection.category), {}, {required:true} %>
   </div>
 
   <div>
