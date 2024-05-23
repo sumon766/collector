@@ -1,0 +1,63 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  category: MyString
+  image_url: MyString
+  user: one
+  custom_string1_state: false
+  custom_string1_name: MyString
+  custom_string2_state: false
+  custom_string2_name: MyString
+  custom_string3_state: false
+  custom_string3_name: MyString
+  custom_int1_state: false
+  custom_int1_name: MyString
+  custom_int2_state: false
+  custom_int2_name: MyString
+  custom_int3_state: false
+  custom_int3_name: MyString
+  custom_txt1_state: false
+  custom_txt1_name: MyText
+  custom_txt2_state: false
+  custom_txt2_name: MyText
+  custom_txt3_state: false
+  custom_txt3_name: MyText
+  custom_date1_state: false
+  custom_date1_name: MyString
+  custom_date2_state: false
+  custom_date2_name: MyString
+  custom_date3_state: false
+  custom_date3_name: MyString
+
+two:
+  name: MyString
+  description: MyText
+  category: MyString
+  image_url: MyString
+  user: two
+  custom_string1_state: false
+  custom_string1_name: MyString
+  custom_string2_state: false
+  custom_string2_name: MyString
+  custom_string3_state: false
+  custom_string3_name: MyString
+  custom_int1_state: false
+  custom_int1_name: MyString
+  custom_int2_state: false
+  custom_int2_name: MyString
+  custom_int3_state: false
+  custom_int3_name: MyString
+  custom_txt1_state: false
+  custom_txt1_name: MyText
+  custom_txt2_state: false
+  custom_txt2_name: MyText
+  custom_txt3_state: false
+  custom_txt3_name: MyText
+  custom_date1_state: false
+  custom_date1_name: MyString
+  custom_date2_state: false
+  custom_date2_name: MyString
+  custom_date3_state: false
+  custom_date3_name: MyString

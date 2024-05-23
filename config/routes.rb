@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   #Other routes for the app
   resources :categories
   resources :tags
+  resources :collections do
+    resources :items
+  end
 end

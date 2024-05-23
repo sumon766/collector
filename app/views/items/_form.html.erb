@@ -1,0 +1,115 @@
+<%= form_with(model: [@collection, item]) do |form| %>
+  <% if item.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+        <% item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :tags, style: "display: block" %>
+    <%= form.text_field :tags %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :collection_id, value: @collection.id %>
+  </div>
+
+  <% if @collection.custom_string1_state %>
+    <div>
+      <%= form.label @collection.custom_string1_name, style: "display: block" %>
+      <%= form.text_field :custom_string1_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_string2_state %>
+    <div>
+      <%= form.label @collection.custom_string2_name, style: "display: block" %>
+      <%= form.text_field :custom_string2_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_string3_state %>
+    <div>
+      <%= form.label @collection.custom_string3_name, style: "display: block" %>
+      <%= form.text_field :custom_string3_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_int1_state %>
+    <div>
+      <%= form.label @collection.custom_int1_name, style: "display: block" %>
+      <%= form.number_field :custom_int1_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_int2_state %>
+    <div>
+      <%= form.label @collection.custom_int2_name, style: "display: block" %>
+      <%= form.number_field :custom_int2_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_int3_state %>
+    <div>
+      <%= form.label @collection.custom_int3_name, style: "display: block" %>
+      <%= form.number_field :custom_int3_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_txt1_state %>
+    <div>
+      <%= form.label @collection.custom_txt1_name, style: "display: block" %>
+      <%= form.text_area :custom_txt1_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_txt2_state %>
+    <div>
+      <%= form.label @collection.custom_txt2_name, style: "display: block" %>
+      <%= form.text_area :custom_txt2_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_txt3_state %>
+    <div>
+      <%= form.label @collection.custom_txt3_name, style: "display: block" %>
+      <%= form.text_area :custom_txt3_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_date1_state %>
+    <div>
+      <%= form.label @collection.custom_date1_name, style: "display: block" %>
+      <%= form.date_field :custom_date1_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_date2_state %>
+    <div>
+      <%= form.label @collection.custom_date2_name, style: "display: block" %>
+      <%= form.date_field :custom_date2_value %>
+    </div>
+  <% end %>
+
+  <% if @collection.custom_date3_state %>
+    <div>
+      <%= form.label @collection.custom_date3_name, style: "display: block" %>
+      <%= form.date_field :custom_date3_value %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
