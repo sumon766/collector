@@ -70,3 +70,4 @@ end
 gem 'pg', '~> 1.5', '>= 1.5.4'
 gem "devise", "~> 4.9"
 gem 'pundit'
+gem 'rails-ujs'
