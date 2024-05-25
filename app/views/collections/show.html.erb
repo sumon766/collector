@@ -7,4 +7,6 @@
   <%= link_to "Back to collections", collections_path %>
 
   <%= button_to "Destroy this collection", @collection, method: :delete %>
+
+  <%= link_to "Items of this collection", collection_items_path(@collection) %>
 </div>
