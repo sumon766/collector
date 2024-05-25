@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :collections do
     resources :items
   end
+  patch 'update_preferences', to: 'preference#update'
 end
