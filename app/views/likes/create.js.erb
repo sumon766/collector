@@ -1,0 +1,2 @@
+document.getElementById('like_button').innerHTML = '<%= j button_to "Unlike", collection_item_like_path(@item.collection, @item), method: :delete, remote: true, class: "btn btn-danger" %>';
+document.getElementById('likes_count').innerText = 'Likes: <%= @item.likes.count %>';

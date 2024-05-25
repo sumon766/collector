@@ -9,11 +9,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  #Other routes for the app
+  # Other routes for the app
   resources :categories
   resources :tags
   resources :collections do
-    resources :items
+    resources :items do
+      resources :comments, only: :create
+      resource :like, only: [:create, :destroy]
+    end
   end
+
   patch 'update_preferences', to: 'preference#update'
 end

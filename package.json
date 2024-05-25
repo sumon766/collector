@@ -1,0 +1,19 @@
+{
+  "name": "collector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sumon766/collector.git"
+  },
+  "private": true,
+  "dependencies": {
+    "@rails/activestorage": "^7.0.8-3",
+    "@rails/ujs": "^7.0.8-3",
+    "turbolinks": "^5.2.0"
+  }
+}

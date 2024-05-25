@@ -8,3 +8,39 @@
 
   <%= button_to "Destroy this item", collection_item_path(@collection, @item), method: :delete %>
 </div>
+
+<h2>Comments</h2>
+<div id="comments">
+  <% @item.comments.each do |comment| %>
+    <p><%= comment.user.email %>: <%= comment.content %></p>
+  <% end %>
+</div>
+
+<% if user_signed_in? %>
+  <%= form_with model: [@item.collection, @item, Comment.new], remote: true do |form| %>
+    <div>
+      <%= form.label :content %>
+      <%= form.text_area :content, id: "comment_content" %>
+    </div>
+    <div>
+      <%= form.submit 'Add Comment' %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Please <%= link_to 'sign in', new_user_session_path %> to add a comment.</p>
+<% end %>
+
+<h2>Likes</h2>
+<p id="likes_count">Likes: <%= @item.likes.count %></p>
+
+<% if user_signed_in? %>
+  <div id="like_button">
+    <% if @item.likes.exists?(user: current_user) %>
+      <%= button_to 'Unlike', collection_item_like_path(@item.collection, @item), method: :delete, remote: true, class: "btn btn-danger" %>
+    <% else %>
+      <%= button_to 'Like', collection_item_like_path(@item.collection, @item), method: :post, remote: true, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% else %>
+  <p>Please <%= link_to 'sign in', new_user_session_path %> to like this item.</p>
+<% end %>
