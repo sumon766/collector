@@ -1,0 +1,2 @@
+document.getElementById('comments').innerHTML += '<p><%= j @comment.user.email %>: <%= j @comment.content %></p>';
+document.getElementById('comment_content').value = '';

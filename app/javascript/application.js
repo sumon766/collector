@@ -1,9 +1,6 @@
-import "@hotwired/turbo-rails"
-import "controllers"
-import Rails from "rails-ujs"
+// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+import Rails from "@rails/ujs";
+import Turbolinks from "turbolinks";
 
-console.log('Starting Rails UJS')
-
-Rails.start()
-
-console.log('Rails UJS has been loaded')
+Rails.start();
+Turbolinks.start();
