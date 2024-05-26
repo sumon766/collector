@@ -1,1 +1,22 @@
-<h2>This is the home page</h2>
+<h1>All Tags</h1>
+<ul>
+  <% @tags.each do |tag| %>
+    <li><%= tag.name %></li>
+  <% end %>
+</ul>
+
+<h1>Latest Items</h1>
+<ul>
+  <% @items.each do |item| %>
+    <li><%= link_to item.name, collection_item_path(item.collection, item) %></li>
+  <% end %>
+</ul>
+
+<h1>Largest Collections</h1>
+<ul>
+  <% @collections.each do |collection| %>
+    <li>
+      <%= link_to collection.name, collections_path(collection) %> (Size: <%= collection.items.count %>)
+    </li>
+  <% end %>
+</ul>

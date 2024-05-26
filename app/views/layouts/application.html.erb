@@ -42,6 +42,13 @@
             <li><%= link_to session[:language] == 'bengali' ? "নতুন তৈরী করুন" : "Create new collection", new_collection_path, class: "dropdown-item" %></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><%= session[:language] == 'bengali' ? "ট্যাগস" : "Tags" %></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to session[:language] == 'bengali' ? "ট্যাগস লিস্ট" : "Tags", tags_path, class: "dropdown-item" %></li>
+            <li><%= link_to session[:language] == 'bengali' ? "নতুন তৈরী করুন" : "Create new Tag", new_tag_path, class: "dropdown-item" %></li>
+          </ul>
+        </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><%= session[:language] == 'bengali' ? "থিম" : "Theme" %></a>

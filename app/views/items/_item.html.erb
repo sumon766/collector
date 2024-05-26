@@ -1,77 +1,100 @@
-<div id="<%= dom_id item %>">
+<div id="<%= dom_id @item %>">
   <p>
     <strong>Name:</strong>
-    <%= item.name %>
+    <%= @item.name %>
   </p>
 
   <p>
     <strong>Tags:</strong>
-    <%= item.tags %>
+    <%= @item.tags %>
   </p>
 
   <p>
     <strong>Collection:</strong>
-    <%= item.collection_id %>
+    <%= link_to @item.collection.name, collection_path(@item.collection) %>
   </p>
 
-  <p>
-    <strong>Custom string1 value:</strong>
-    <%= item.custom_string1_value %>
-  </p>
+  <% if @item.custom_string1_value.present? && @item.collection.custom_string1_state %>
+    <p>
+      <strong><%= @item.collection.custom_string1_name %>:</strong>
+      <%= @item.custom_string1_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom string2 value:</strong>
-    <%= item.custom_string2_value %>
-  </p>
+  <% if @item.custom_string2_value.present? && @item.collection.custom_string2_state %>
+    <p>
+      <strong><%= @item.collection.custom_string2_name %>:</strong>
+      <%= @item.custom_string2_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom string3 value:</strong>
-    <%= item.custom_string3_value %>
-  </p>
+  <% if @item.custom_string3_value.present? && @item.collection.custom_string3_state %>
+    <p>
+      <strong><%= @item.collection.custom_string3_name %>:</strong>
+      <%= @item.custom_string3_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom int1 value:</strong>
-    <%= item.custom_int1_value %>
-  </p>
+  <% if @item.custom_int1_value.present? && @item.collection.custom_int1_state %>
+    <p>
+      <strong><%= @item.collection.custom_int1_name %>:</strong>
+      <%= @item.custom_int1_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom int2 value:</strong>
-    <%= item.custom_int2_value %>
-  </p>
+  <% if @item.custom_int2_value.present? && @item.collection.custom_int2_state %>
+    <p>
+      <strong><%= @item.collection.custom_int2_name %>:</strong>
+      <%= @item.custom_int2_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom int3 value:</strong>
-    <%= item.custom_int3_value %>
-  </p>
+  <% if @item.custom_int3_value.present? && @item.collection.custom_int3_state %>
+    <p>
+      <strong><%= @item.collection.custom_int3_name %>:</strong>
+      <%= @item.custom_int3_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom txt1 value:</strong>
-    <%= item.custom_txt1_value %>
-  </p>
+  <% if @item.custom_txt1_value.present? && @item.collection.custom_txt1_state %>
+    <p>
+      <strong><%= @item.collection.custom_txt1_name %>:</strong>
+      <%= @item.custom_txt1_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom txt2 value:</strong>
-    <%= item.custom_txt2_value %>
-  </p>
+  <% if @item.custom_txt2_value.present? && @item.collection.custom_txt2_state %>
+    <p>
+      <strong><%= @item.collection.custom_txt2_name %>:</strong>
+      <%= @item.custom_txt2_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom txt3 value:</strong>
-    <%= item.custom_txt3_value %>
-  </p>
+  <% if @item.custom_txt3_value.present? && @item.collection.custom_txt3_state %>
+    <p>
+      <strong><%= @item.collection.custom_txt3_name %>:</strong>
+      <%= @item.custom_txt3_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom date1 value:</strong>
-    <%= item.custom_date1_value %>
-  </p>
+  <% if @item.custom_date1_value.present? && @item.collection.custom_date1_state %>
+    <p>
+      <strong><%= @item.collection.custom_date1_name %>:</strong>
+      <%= @item.custom_date1_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom date2 value:</strong>
-    <%= item.custom_date2_value %>
-  </p>
+  <% if @item.custom_date2_value.present? && @item.collection.custom_date2_state %>
+    <p>
+      <strong><%= @item.collection.custom_date2_name %>:</strong>
+      <%= @item.custom_date2_value %>
+    </p>
+  <% end %>
 
-  <p>
-    <strong>Custom date3 value:</strong>
-    <%= item.custom_date3_value %>
-  </p>
-
+  <% if @item.custom_date3_value.present? && @item.collection.custom_date3_state %>
+    <p>
+      <strong><%= @item.collection.custom_date3_name %>:</strong>
+      <%= @item.custom_date3_value %>
+    </p>
+  <% end %>
 </div>
