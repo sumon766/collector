@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_collection
   before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :authorize_item, only: %i[new create edit update]
 
   # GET /collections/:collection_id/items
   def index
@@ -67,6 +68,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = @collection.items.find(params[:id])
+  end
+
+  def authorize_item
+    authorize @collection.items.build
   end
 
   def item_params
