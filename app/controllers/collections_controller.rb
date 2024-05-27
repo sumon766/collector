@@ -3,7 +3,7 @@ class CollectionsController < ApplicationController
   before_action :set_collection, only: %i[ show edit update destroy ]
 
   def index
-    @collections = Collection.all
+    @collections = Collection.where(user_id: current_user.id);
   end
 
   def show
@@ -22,7 +22,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     @collection.user = current_user
     set_custom_field_states
-
+    authorize @collection
     if @collection.save
       redirect_to collection_url(@collection), notice: "Collection was successfully created."
     else
