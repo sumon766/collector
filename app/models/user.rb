@@ -13,4 +13,11 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  def active_for_authentication?
+    super && status == 1
+  end
+
+  def inactive_message
+    status == 0 ? :deactivated : super
+  end
 end
