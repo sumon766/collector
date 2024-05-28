@@ -20,4 +20,8 @@ class User < ApplicationRecord
   def inactive_message
     status == 0 ? :deactivated : super
   end
+
+  def admin?
+    role == 'admin'
+  end
 end

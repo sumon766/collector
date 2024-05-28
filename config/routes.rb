@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   end
 
   patch 'update_preferences', to: 'preference#update'
+  get 'admin/index', to: 'admin#index'
 end

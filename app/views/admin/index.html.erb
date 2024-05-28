@@ -1,0 +1,21 @@
+<h2>List of Users</h2>
+
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.role == 0 ? "User" : "Admin" %></td>
+      <td><%= user.status == 0 ? "Blocked" : "" %></td>
+      <td>Action goes here</td>
+    </tr>
+  <% end %>
+</table>
