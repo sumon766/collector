@@ -13,9 +13,23 @@
     <tr>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
-      <td><%= user.role == 0 ? "User" : "Admin" %></td>
+      <td><%= user.admin? ? "Admin" : "User" %></td>
       <td><%= user.status == 0 ? "Blocked" : "" %></td>
-      <td>Action goes here</td>
+      <td>
+        <% if user.status == 1 %>
+          <%= button_to "Block", update_user_status_path(user.id, status: 0), method: :patch, class: "btn btn-danger btn-sm" %>
+        <% else %>
+          <%= button_to "Unblock", update_user_status_path(user.id, status: 1), method: :patch, class: "btn btn-success btn-sm" %>
+        <% end %>
+
+        <%= link_to "View", update_preferences_path(theme: 'dark'), class:"btn btn-sm btn-primary" %>
+
+        <% if user.admin? %>
+          <%= button_to "Remove from Admin", update_user_role_path(user.id, role: 'user'), method: :patch, class: "btn btn-primary btn-sm" %>
+        <% else %>
+          <%= button_to "Set as Admin", update_user_role_path(user.id, role: 'admin'), method: :patch, class: "btn btn-primary btn-sm" %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>

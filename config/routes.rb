@@ -21,4 +21,6 @@ Rails.application.routes.draw do
 
   patch 'update_preferences', to: 'preference#update'
   get 'admin/index', to: 'admin#index'
+  patch 'update_user_status/:id', to: 'admin#update_user_status', as: 'update_user_status'
+  patch 'update_user_role/:id', to: 'admin#update_user_role', as: 'update_user_role'
 end
