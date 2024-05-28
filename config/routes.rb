@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   get 'admin/index', to: 'admin#index'
   patch 'update_user_status/:id', to: 'admin#update_user_status', as: 'update_user_status'
   patch 'update_user_role/:id', to: 'admin#update_user_role', as: 'update_user_role'
+  get 'admin/users/:id/collections', to: 'admin#user_collections', as: 'admin_user_collections'
+  get 'admin/collections/:id/items', to: 'admin#collection_items', as: 'admin_collection_items'
 end

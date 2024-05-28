@@ -23,7 +23,7 @@
   <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
 <% end %>
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><%= session[:language] == 'bengali' ? 'কালেক্টর' : 'Collector' %></a>
+    <%= link_to session[:language] == 'bengali' ? 'কালেক্টর' : 'Collector', root_path, class:"navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>

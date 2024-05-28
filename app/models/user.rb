@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
+  has_many :collections, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
