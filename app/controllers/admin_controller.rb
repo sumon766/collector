@@ -38,12 +38,16 @@ class AdminController < ApplicationController
     @items = @collection.items
   end
 
+  def collection_new
+
+  end
+
   def create_collection
     @collection = Collection.new(collection_params)
     if @collection.save
       redirect_to admin_user_collections_path(@user), notice: "Collection was created successfully"
     else
-      render :new_collection
+      render :collection_new
     end
   end
 
