@@ -10,7 +10,19 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
+  has_many :collections, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  def active_for_authentication?
+    super && status == 1
+  end
+
+  def inactive_message
+    status == 0 ? :deactivated : super
+  end
+
+  def admin?
+    role == 'admin'
+  end
 end

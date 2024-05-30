@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_collection
   before_action :set_item, only: %i[ show edit update destroy ]
-  before_action :authorize_item, only: %i[new create edit update]
+  before_action :authorize_item, only: %i[new edit]
 
   # GET /collections/:collection_id/items
   def index

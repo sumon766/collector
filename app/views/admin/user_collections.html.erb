@@ -1,7 +1,7 @@
 <h1>Collections</h1>
 
 <div id="collections">
-  <% @collections.each do |collection| %>
+  <% @user.collections.each do |collection| %>
     <%= render collection %>
     <p>
       <%= link_to "Show this collection", collection %>
